@@ -93,7 +93,7 @@ exports.addToken = async (req, res, next) => {
   })
 }
 
-exports.addAccount = async (req, res, next) => {
+exports.allAccount = async (req, res, next) => {
   const accounts = await Account.find();
 
   res.status(200).json({
