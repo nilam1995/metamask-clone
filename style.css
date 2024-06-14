@@ -117,8 +117,7 @@ body{
   background-color: #171717;
   text-align: center;
   padding: 2rem;
-  /* display: block; */
-  display: none;
+  display: block;
 }
 
 .create_popUp{
@@ -429,7 +428,7 @@ textarea{
   display: none;
 }
 .import_token{
-  /* display: none; */
+  display: none;
 }
 .goBack{
   width: 50px;

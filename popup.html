@@ -358,8 +358,9 @@
                   placeholder="password"
                 />
               </div>
+              <button id="login_up" class="button3 connectWallet">Login</button>
             </div>
-            <button id="login_up" class="button3 connectWallet">Login</button>
+           
             <p>
               Login to your account
               <strong id="accountCreate" class="home_title">Create Account</strong>
@@ -520,12 +521,113 @@
                 </div>
 
                 <button id="add_new_token" class="button3 connectWallet">Import</button>
+
+                <div class="accountList" id="accountList"></div>
               </div>
+            </div>
+
+            <!-- Import Account -->
+            <div class="home" id="home">
+              <div class="home_header">
+                <div>
+                  <p id="userAddress">connecting...</p>
+                </div>
+                <div>
+                  <p>Active...</p>
+                </div>
+              </div>
+
+              <img
+                src="./assets/theblockchaincoders.png"
+                alt=""
+                class="home_header_img"
+              />
+              <h1 id="accountBalance">0.00 MATIC</h1>
+
+              <div class="home_features">
+                <div class="home_feature_item">
+                  <img 
+                    src="./assets/buy.png"
+                    alt=""
+                    class="home_features_img"
+                  />
+                  <p class="text">Buy</p>
+                </div>
+
+                <div class="home_feature_item">
+                  <img 
+                    src="./assets/send.png"
+                    alt=""
+                    class="home_features_img"
+                  />
+                  <p class="text">Send</p>
+                </div>
+
+                <div class="home_feature_item">
+                  <img 
+                    src="./assets/user.png"
+                    alt=""
+                    class="home_features_img"
+                  />
+                  <p class="text">Account</p>
+                </div>
+
+                <div class="home_feature_item">
+                  <img 
+                    src="./assets/import.png"
+                    alt=""
+                    class="home_features_img"
+                  />
+                  <p class="text">Import</p>
+                </div>
+              </div>
+
+              <div class="home_tabs">
+                <p id="open_assets">Assets</p>
+                <p id="logout">logout</p>
+                <p id="open_activity">Activity</p>
+              </div>
+              <p class="space"></p>
+              <p class="space"></p>
+
+              <!-- Assets -->
+              <div id="assets" class="assets"></div>
+
+              <!-- Activity -->
+               <div id="activity" class="activity">
+                <div class="assets_item">
+                  <img
+                    src="./assets/theblockchaincoders.png"
+                    class="assets_item_img"
+                    alt=""
+                  />
+
+                  <span>3338d89332....</span>
+                  <span>0.45 MATIC</span>
+
+                </div>
+                <div class="assets_item">
+                  <img
+                    src="./assets/theblockchaincoders.png"
+                    class="assets_item_img"
+                    alt=""
+                  />
+
+                  <span>3338d89332....</span>
+                  <span>0.45 MATIC</span>
+
+                </div>
+               </div>
             </div>
 
       </div>
     </div>
 
+    <!-- <script src="http://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+    type="application/javascript"></script> -->
+    <script src="popup.js">
+
+    </script>
     <script src="popup.js">
 
     </script>

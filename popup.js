@@ -1,5 +1,3 @@
-const { response, json } = require("express");
-
 document.addEventListener("DOMContentLoaded", function(){
 
   document.getElementById('accountList').addEventListener("click",changeAccount);
@@ -345,6 +343,7 @@ function addAccount(){
 }
 
 function myFunction(){
+  console.log(ethers)
   const str = localStorage.getItem("userWallet");
   const parseObj = JSON.parse(str);
 
