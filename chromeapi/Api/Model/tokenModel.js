@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const tokenSchema = new mongoose.Schema({
   name: String,
   address: String,
-  Symbol: String,
+  symbol: String,
 });
 
 const Token = mongoose.model("Token", tokenSchema);

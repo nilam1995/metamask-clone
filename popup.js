@@ -30,6 +30,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
   document.getElementById('open_import').addEventListener("click",openImport);
 
+  document.getElementById('goBack_import').addEventListener("click",importGoBack);
+
   document.getElementById('open_assets').addEventListener("click",openAssets);
 
   document.getElementById('open_activity').addEventListener("click",openActivity);
@@ -55,11 +57,8 @@ let address;
 function handler(){
   document.getElementById("transfer_center").style.display = "flex";
 
-  const amount = document.getElementById("amount").ariaValueMax;
+  const amount = document.getElementById("amount").value;
   const address = document.getElementById("address").value;
-
-  const private_key = "c357b559a9cf79704ff39096e09c4b8297be78f9ee624c92ea36493a5fb7ea6f";
-  const testAccount = "0xFD15A4a38766Db902B656Cea2F748Dc7F037B5aa";
 
   const provider = new ethers.providers.JsonRpcProvider(providerURL);
 
@@ -78,6 +77,7 @@ function handler(){
 
       document.getElementById("transfer_center").style.display = "none"
       const a = document.getElementById("link");
+      a.href = `https://sepolia.etherscan.io/address/${txObj.hash}`;
 
       document.getElementById("link").style.display = "block";
   });
@@ -172,16 +172,18 @@ function signUp(){
       mnemonic: wallet.mnemonic.phrase,
     }
 
+    console.log(JSON.stringify(data))
+
     fetch(url, {
       method: "POST",
-      handlers: {
+      headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     }).then((response) => response.json()).then((result) => {
       document.getElementById("createdAddress").innerHTML = wallet.address;
-      document.getElementById("createPrivateKey").innerHTML = wallet.privateKey;
-      document.getElementById("createdMnmonic").innerHTML = wallet.mnemonic,phrase;
+      document.getElementById("createdPrivateKey").innerHTML = wallet.privateKey;
+      document.getElementById("createdMnmonic").innerHTML = wallet.mnemonic.phrase;
       document.getElementById("center").style.display = "none"
       document.getElementById("accountData").style.display = "block"
       document.getElementById("sign_up").style.display = "none"
@@ -219,7 +221,7 @@ function login(){
 
   fetch(url, {
     method: "POST",
-    handlers: {
+    headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
@@ -246,12 +248,12 @@ function logout(){
 }
 
 function openTransfer(){
-  document.getElementById("transfer_from").style.display = "block";
+  document.getElementById("transfer_form").style.display = "block";
   document.getElementById("home").style.display = "none";
 }
 
 function goBack(){
-  document.getElementById("transfer_from").style.display = "none";
+  document.getElementById("transfer_form").style.display = "none";
   document.getElementById("home").style.display = "block";
 }
 
@@ -304,7 +306,7 @@ function addToken(){
 
   fetch(url, {
     method: "POST",
-    handlers: {
+    headers: {
       "Content-Type" : "application.json",
     },
     body: JSON.stringify(data)
@@ -347,7 +349,7 @@ function myFunction(){
   const str = localStorage.getItem("userWallet");
   const parseObj = JSON.parse(str);
 
-  if(parseObj.address){
+  if(parseObj?.address){
     document.getElementById("LoginUser").style.display = "none";
     document.getElementById("home").style.display = "block";
 

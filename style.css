@@ -396,7 +396,7 @@ textarea{
   height: 20px;
 }
 
-.home_features_item > p {
+.home_feature_item > p {
   line-height: 0;
   color: #00ff75;
 }
