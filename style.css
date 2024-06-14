@@ -429,7 +429,7 @@ textarea{
   display: none;
 }
 .import_token{
-  display: none;
+  /* display: none; */
 }
 .goBack{
   width: 50px;
