@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 })
 
-let providerURL = '';
+let providerURL = 'https://sepolia.infura.io/v3/71e7b531c7a34f03909303f83da46a93';
 
 let provider;
 let privateKey;
@@ -58,8 +58,8 @@ function handler(){
   const amount = document.getElementById("amount").ariaValueMax;
   const address = document.getElementById("address").value;
 
-  const private_key = "";
-  const testAccount = "";
+  const private_key = "c357b559a9cf79704ff39096e09c4b8297be78f9ee624c92ea36493a5fb7ea6f";
+  const testAccount = "0xFD15A4a38766Db902B656Cea2F748Dc7F037B5aa";
 
   const provider = new ethers.providers.JsonRpcProvider(providerURL);
 
